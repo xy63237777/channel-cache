@@ -59,6 +59,8 @@ type commonsData struct {
 	out chan interface{}
 }
 
+
+
 type dispatcher struct {
 	queue chan *commons
 	stateCh chan string

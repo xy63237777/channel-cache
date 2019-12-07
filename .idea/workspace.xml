@@ -4,7 +4,11 @@
     <list default="true" id="b2caed77-1082-4b41-bbd0-c92a90da9ddb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cache-goV0-Error/cache.go" beforeDir="false" afterPath="$PROJECT_DIR$/cache-goV0-Error/cache.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache-goV0-Error/liquidator.go" beforeDir="false" afterPath="$PROJECT_DIR$/cache-goV0-Error/liquidator.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache-goV1/Dispatcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/cache-goV1/Dispatcher.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache-goV1/cache.go" beforeDir="false" afterPath="$PROJECT_DIR$/cache-goV1/cache.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache-goV1/defs.go" beforeDir="false" afterPath="$PROJECT_DIR$/cache-goV1/defs.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache-goV1/manager.go" beforeDir="false" afterPath="$PROJECT_DIR$/cache-goV1/manager.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache-goV1/signal_cache.go" beforeDir="false" afterPath="$PROJECT_DIR$/cache-goV1/signal_cache.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +63,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestCache_Get in four-seasons/cache-goV0-Error">
+  <component name="RunManager" selected="Go Test.TestCache_Get in four-seasons/cache-goV1">
     <configuration name="go build four-seasons" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="four-seasons" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -89,6 +93,17 @@
       <pattern value="^TestCache_Get$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestCache_Get in four-seasons/cache-goV1" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="four-seasons" />
+      <working_directory value="$PROJECT_DIR$/cache-goV1" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="four-seasons/cache-goV1" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestCache_Get$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestCache_GetAsync in four-seasons/cache-goV1" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="four-seasons" />
       <working_directory value="$PROJECT_DIR$/cache-goV1" />
@@ -100,24 +115,13 @@
       <pattern value="^TestCache_GetAsync$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestFunc in four-seasons/cache-goV1" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="four-seasons" />
-      <working_directory value="$PROJECT_DIR$/cache-goV1" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="four-seasons/cache-goV1" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestFunc$" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestCache_Get in four-seasons/cache-goV1" />
         <item itemvalue="Go Test.TestCache_Get in four-seasons/cache-goV0-Error" />
         <item itemvalue="Go Build.go build four-seasons/test-cache" />
         <item itemvalue="Go Build.go build four-seasons" />
         <item itemvalue="Go Test.TestCache_GetAsync in four-seasons/cache-goV1" />
-        <item itemvalue="Go Test.TestFunc in four-seasons/cache-goV1" />
       </list>
     </recent_temporary>
   </component>

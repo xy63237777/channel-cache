@@ -7,6 +7,12 @@ import (
 	"time"
 )
 
+func newCacheForCustom(ca CacheInter) *Cache {
+	cache := newCache("", 0)
+	cache.cache = ca
+	return cache
+}
+
 func newCache(typeCache CacheType, capacity int) *Cache {
 	var cache *Cache
 	if capacity <= 0 {
@@ -22,6 +28,8 @@ func newCache(typeCache CacheType, capacity int) *Cache {
 		cache.cache = newLRUCache(capacity, cache)
 	} else if typeCache == CacheForEasy {
 		cache.cache = newEasyCache(capacity)
+	} else if typeCache == "" {
+		//nothing
 	} else {
 		cache.cache = newLFUCache(capacity, cache)
 	}
@@ -164,6 +172,8 @@ var onceGetFunc = func(data *commonsData) {
 	}
 }
 
+
+
 func getHash(key *string, size int) byte {
 	hash := (*key)[0]%uint8(size)
 	fmt.Println(hash, *key)
@@ -171,9 +181,11 @@ func getHash(key *string, size int) byte {
 }
 
 func getFunc(key string, c *Cache, ch chan interface{})  {
-
 	c.dp.queue <- newCommons(&onceGetFunc, newCommonsData(key, nil, c,ch))
 }
+
+
+
 
 func (c *Cache) get(key string) (interface{} ,bool) {
 	getFunc(key, c, c.onceOceChannel)

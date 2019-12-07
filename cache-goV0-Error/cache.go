@@ -163,9 +163,10 @@ func setFunc(key string, val *item ,c *Cache, ch chan interface{})  {
 			}
 		}
 	}
-
 	c.dp.queue <- newCommons(fn)
 }
+
+
 
 /*
 -----------------------------------------------------------------------------

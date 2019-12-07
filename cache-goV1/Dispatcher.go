@@ -22,7 +22,6 @@ func (d *dispatcher) run(li *Liquidator)  {
 	for {
 		select {
 		case commons := <- d.queue: (*commons.fn)(commons.data)
-			//fmt.Println(commons)
 		case state := <- d.stateCh:
 			if state == CLOSE {
 				close(d.queue)
@@ -31,5 +30,5 @@ func (d *dispatcher) run(li *Liquidator)  {
 			li.clearFunc()
 		}
 	}
-
 }
+

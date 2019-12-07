@@ -22,6 +22,10 @@ func NewSignalCache(typeCache CacheType, capacity int) *Cache {
 	return newSignalCacheOnce(typeCache, capacity)
 }
 
+func NewSignalCacheCustom(ca CacheInter) *Cache {
+	return newCacheForCustom(ca)
+}
+
 func NewSignalCacheForDefault() *Cache {
 	return newSignalCacheOnce(CacheForLFU, DefaultCapacity)
 }

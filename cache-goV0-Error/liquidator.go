@@ -7,7 +7,6 @@ import (
 
 
 
-
 func (node needClearNode) CompareTo(other alg.Comparable) int {
 	return int(node.expiration - other.(needClearNode).expiration)
 }

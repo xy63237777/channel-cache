@@ -34,7 +34,7 @@ func TestCache_Get(t *testing.T) {
 	for i:=0; i < n; i++ {
 		k := i % 4096
 		cache.Set(strconv.Itoa(k), "hello")
-		cache.Get(strconv.Itoa(k))
+		cache.GetAsync(strconv.Itoa(k))
 	}
 	fmt.Println((time.Now().UnixNano() - start)/int64(time.Millisecond))
 	start = time.Now().UnixNano()

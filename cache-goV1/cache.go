@@ -4,7 +4,6 @@ import (
 	"errors"
 	"fmt"
 	"github.com/gpmgo/gopm/modules/log"
-	"sync"
 	"time"
 )
 
@@ -24,7 +23,7 @@ func newCache(typeCache CacheType, capacity int) *Cache {
 	} else if typeCache == CacheForEasy {
 		cache.cache = newEasyCache(capacity)
 	} else {
-		cache.cache = NewLFUCache(capacity, cache)
+		cache.cache = newLFUCache(capacity, cache)
 	}
 
 	cache.dp.start(cache.liquidator)
@@ -263,16 +262,4 @@ func checkCloseGentle(c *Cache) bool {
 	return false
 }
 
-var lock  = &sync.RWMutex{}
 
-func (c *Cache) SetLock(key string, val interface{}) {
-	lock.Lock()
-	c.cache.Put(key, val)
-	lock.Unlock()
-}
-
-func (c *Cache) GetLock(key string) interface{} {
-	lock.RLock()
-	defer lock.RUnlock()
-	return c.cache.Get(key)
-}

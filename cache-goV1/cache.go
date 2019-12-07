@@ -4,7 +4,6 @@ import (
 	"errors"
 	"fmt"
 	"github.com/gpmgo/gopm/modules/log"
-	"sync"
 	"time"
 )
 
@@ -263,16 +262,4 @@ func checkCloseGentle(c *Cache) bool {
 	return false
 }
 
-var lock  = &sync.RWMutex{}
 
-func (c *Cache) SetLock(key string, val interface{}) {
-	lock.Lock()
-	c.cache.Put(key, val)
-	lock.Unlock()
-}
-
-func (c *Cache) GetLock(key string) interface{} {
-	lock.RLock()
-	defer lock.RUnlock()
-	return c.cache.Get(key)
-}

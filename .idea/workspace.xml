@@ -55,7 +55,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build four-seasons/test-cache">
+  <component name="RunManager" selected="Go Test.TestCache_Get in four-seasons/cache-goV0-Error">
     <configuration name="go build four-seasons" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="four-seasons" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -72,6 +72,17 @@
       <filePath value="$PROJECT_DIR$/test-cache/github_cache.go" />
       <package value="four-seasons/test-cache" />
       <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestCache_Get in four-seasons/cache-goV0-Error" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="four-seasons" />
+      <working_directory value="$PROJECT_DIR$/cache-goV0-Error" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="four-seasons/cache-goV0-Error" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestCache_Get$" />
       <method v="2" />
     </configuration>
     <configuration name="TestCache_GetAsync in four-seasons/cache-goV1" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -96,24 +107,13 @@
       <pattern value="^TestFunc$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestLiquidator in four-seasons/cache-goV1" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="four-seasons" />
-      <working_directory value="$PROJECT_DIR$/cache-goV1" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="four-seasons/cache-goV1" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestLiquidator$" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestCache_Get in four-seasons/cache-goV0-Error" />
         <item itemvalue="Go Build.go build four-seasons/test-cache" />
         <item itemvalue="Go Build.go build four-seasons" />
         <item itemvalue="Go Test.TestCache_GetAsync in four-seasons/cache-goV1" />
         <item itemvalue="Go Test.TestFunc in four-seasons/cache-goV1" />
-        <item itemvalue="Go Test.TestLiquidator in four-seasons/cache-goV1" />
       </list>
     </recent_temporary>
   </component>

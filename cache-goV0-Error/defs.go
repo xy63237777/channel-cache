@@ -48,7 +48,6 @@ type Liquidator struct {
 
 type commons struct {
 	fn func()
-	setFn func( string,  *item , *Cache, chan interface{}) interface{}
 }
 
 type dispatcher struct {

@@ -4,7 +4,7 @@ func (lc *lfuCache) Size() int {
 	return lc.size
 }
 
-func NewLFUCache(capacity int, master *Cache) *lfuCache {
+func newLFUCache(capacity int, master *Cache) *lfuCache {
 	lfuCache := &lfuCache{
 		capacity: capacity,
 		size:     0,

@@ -2,7 +2,6 @@ package gocache
 
 import (
 	"errors"
-	"fmt"
 	"log"
 	"sync"
 	"time"
@@ -71,10 +70,17 @@ func (cm *CacheManager) GetCache(key string) *Cache {
 根据规则创建缓存
 */
 func (cm *CacheManager) CreateCache(key string,typeCache CacheType, capacity int) *Cache {
-	fmt.Println("hello123123123")
 	cm.mu.Lock()
 	defer cm.mu.Unlock()
 	cache := newCache(typeCache, capacity)
+	cm.m[key] = cache
+	return cache
+}
+
+func (cm *CacheManager) CreateCacheCustom(key string, ca CacheInter) *Cache {
+	cm.mu.Lock()
+	defer cm.mu.Unlock()
+	cache := newCacheForCustom(ca)
 	cm.m[key] = cache
 	return cache
 }

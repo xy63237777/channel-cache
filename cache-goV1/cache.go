@@ -24,7 +24,7 @@ func newCache(typeCache CacheType, capacity int) *Cache {
 	} else if typeCache == CacheForEasy {
 		cache.cache = newEasyCache(capacity)
 	} else {
-		cache.cache = NewLFUCache(capacity, cache)
+		cache.cache = newLFUCache(capacity, cache)
 	}
 
 	cache.dp.start(cache.liquidator)

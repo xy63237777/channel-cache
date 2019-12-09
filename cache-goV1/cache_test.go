@@ -30,6 +30,7 @@ func TestCache_GetAsync(t *testing.T) {
 func TestCache_Get(t *testing.T) {
 	n := 500000
 	cache := NewSignalCacheForDefault()
+
 	start := time.Now().UnixNano()
 	for i:=0; i < n; i++ {
 		k := i % 4096

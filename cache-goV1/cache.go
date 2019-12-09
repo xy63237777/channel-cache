@@ -3,7 +3,7 @@ package gocache
 import (
 	"errors"
 	"fmt"
-	"github.com/gpmgo/gopm/modules/log"
+	"four-seasons/log"
 	"time"
 )
 
@@ -56,8 +56,10 @@ func (c *Cache) IsClose() bool {
 
 func (c *Cache) close(name string) error {
 	if c.isClose {
+		log.Error("Cache name : %s is Closed", name)
 		return errors.New("Cache Name : " + name +" is Closed")
 	}
+	log.Info("Closing cache Name is %s ...",name)
 	c.isClose = true
 	for i := 0; i < len(c.dp.queue); i++ {
 		c.dp.stateCh <- CLOSE
@@ -67,8 +69,10 @@ func (c *Cache) close(name string) error {
 
 func (c *Cache) run(name string) error {
 	if !c.isClose {
+		log.Error("Cache name : %s is Running", name)
 		return errors.New("Cache Name : " + name +" is Running")
 	}
+	log.Info("Start cache Name is %s ...",name)
 	c.isClose = false
 	c.dp.start(c.liquidator)
 	return nil

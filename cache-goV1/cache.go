@@ -106,15 +106,23 @@ func (c *Cache) SetForDefaultExpiration(key string, val interface{})  {
 	if checkCloseGentle(c) {
 		return
 	}
-	c.liquidator.elements.Push(newClearNode(c, key, c.expiration))
+	doPush(c, newClearNode(c, key, c.expiration))
 	c.setAsync(key, newItem(val, c.expiration))
+}
+
+func doPush(c *Cache, node *needClearNode)  {
+	c.liquidator.push(node)
+	if c.liquidator.elements.Length() >=  c.cache.Capacity() {
+		 c.liquidator.clearFunc()
+	}
+
 }
 
 func (c *Cache) SetForExpiration(key string, val interface{}, d time.Duration) {
 	if checkCloseGentle(c) {
 		return
 	}
-	c.liquidator.elements.Push(newClearNode(c, key, d))
+	doPush(c, newClearNode(c, key, d))
 	c.setAsync(key, newItem(val, d))
 }
 

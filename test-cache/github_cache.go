@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 )
-var N = 3000000
+var N = 300000
 var M = 8
 func main() {
 	manager := ca.NewCacheManager()
@@ -21,7 +21,7 @@ func main() {
 	//testForMyLRU()
 	testForGitPlus()
 	//testForMyPlus2()
-	testForMyPlus()
+	//testForMyPlus()
 	testForMyLRUPlus()
 
 }
@@ -55,13 +55,11 @@ func testForMyG()  {
 	start := time.Now().UnixNano()
 	for i := 0; i < N; i++{
 		k := i
-		cache.Set(strconv.Itoa(k), strconv.Itoa(i))
-		go func() {
-			async := cache.GetAsync(strconv.Itoa(k))
-			<- async
-		}()
+		cache.SetForExpiration(strconv.Itoa(k), strconv.Itoa(i),time.Nanosecond)
+		cache.GetAsync(strconv.Itoa(k))
 	}
 	fmt.Println((time.Now().UnixNano() - start)/int64(time.Millisecond))
+	time.Sleep(time.Second * 5)
 }
 
 func testForMyMore()  {
@@ -188,16 +186,15 @@ func testForMyLRUPlus()  {
 	for i := 0; i < M; i++ {
 		group.Add(1)
 		go func() {
-
-			for j := 0; j < N; j++{
+			for j := 0; j < N/10; j++{
 				k := j
 				cache.Set(strconv.Itoa(k), strconv.Itoa(i))
 				cache.GetAsync(strconv.Itoa(k))
 			}
+			fmt.Println("hello123")
 			group.Done()
 		}()
 	}
-
 	group.Wait()
 	fmt.Println((time.Now().UnixNano() - start)/int64(time.Millisecond))
 }

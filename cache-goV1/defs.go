@@ -45,6 +45,7 @@ type Cache struct {
 
 type Liquidator struct {
 	elements *alg.PriorityQueue
+	mu sync.RWMutex
 }
 
 type commons struct {
@@ -70,6 +71,7 @@ type dispatcher struct {
 type CacheInter interface {
 	Get(string) interface{}
 	Put(string, interface{})
+	Capacity() int
 	Delete(string)
 }
 

@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2caed77-1082-4b41-bbd0-c92a90da9ddb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cache-goV1/dispatcher_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/log.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache-goV1/Dispatcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/cache-goV1/Dispatcher.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/priority_queue.go" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/priority_queue.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cache-goV1/cache.go" beforeDir="false" afterPath="$PROJECT_DIR$/cache-goV1/cache.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache-goV1/cache_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/cache-goV1/cache_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache-goV1/defs.go" beforeDir="false" afterPath="$PROJECT_DIR$/cache-goV1/defs.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache-goV1/easy_cache.go" beforeDir="false" afterPath="$PROJECT_DIR$/cache-goV1/easy_cache.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache-goV1/lfu.go" beforeDir="false" afterPath="$PROJECT_DIR$/cache-goV1/lfu.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache-goV1/liquidator.go" beforeDir="false" afterPath="$PROJECT_DIR$/cache-goV1/liquidator.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache-goV1/lru.go" beforeDir="false" afterPath="$PROJECT_DIR$/cache-goV1/lru.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-cache/github_cache.go" beforeDir="false" afterPath="$PROJECT_DIR$/test-cache/github_cache.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,16 +65,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestCache_IsClose in four-seasons/cache-goV1">
-    <configuration name="go build four-seasons" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="four-seasons" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/main.go" />
-      <package value="four-seasons" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Build.go build four-seasons/test-cache">
     <configuration name="go build four-seasons/test-cache" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="four-seasons" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -79,17 +73,6 @@
       <filePath value="$PROJECT_DIR$/test-cache/github_cache.go" />
       <package value="four-seasons/test-cache" />
       <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestCache_Get in four-seasons/cache-goV0-Error" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="four-seasons" />
-      <working_directory value="$PROJECT_DIR$/cache-goV0-Error" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="four-seasons/cache-goV0-Error" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestCache_Get$" />
       <method v="2" />
     </configuration>
     <configuration name="TestCache_Get in four-seasons/cache-goV1" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -103,6 +86,17 @@
       <pattern value="^TestCache_Get$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestCache_GetAsync in four-seasons/cache-goV1" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="four-seasons" />
+      <working_directory value="$PROJECT_DIR$/cache-goV1" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="four-seasons/cache-goV1" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestCache_GetAsync$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestCache_IsClose in four-seasons/cache-goV1" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="four-seasons" />
       <working_directory value="$PROJECT_DIR$/cache-goV1" />
@@ -114,13 +108,24 @@
       <pattern value="^TestCache_IsClose$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestFunc in four-seasons/cache-goV1" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="four-seasons" />
+      <working_directory value="$PROJECT_DIR$/cache-goV1" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="four-seasons/cache-goV1" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestFunc$" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build four-seasons/test-cache" />
+        <item itemvalue="Go Test.TestFunc in four-seasons/cache-goV1" />
+        <item itemvalue="Go Test.TestCache_GetAsync in four-seasons/cache-goV1" />
         <item itemvalue="Go Test.TestCache_IsClose in four-seasons/cache-goV1" />
         <item itemvalue="Go Test.TestCache_Get in four-seasons/cache-goV1" />
-        <item itemvalue="Go Test.TestCache_Get in four-seasons/cache-goV0-Error" />
-        <item itemvalue="Go Build.go build four-seasons/test-cache" />
-        <item itemvalue="Go Build.go build four-seasons" />
       </list>
     </recent_temporary>
   </component>

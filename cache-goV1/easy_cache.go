@@ -15,6 +15,10 @@ func (ec *easyCache) Delete(key string)  {
 
 }
 
+func (ec *easyCache) Capacity() int {
+	return DefaultCapacity
+}
+
 
 func (ec *easyCache) Put(key string, value interface{})  {
 	ec.elements[key] =value

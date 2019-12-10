@@ -1,6 +1,8 @@
 package algorithm
 
-import "container/heap"
+import (
+	"container/heap"
+)
 
 type Comparable interface {
 	CompareTo(other Comparable) int
@@ -19,9 +21,10 @@ func NewPriorityQueue() *PriorityQueue {
 
 type priorityQueue []Comparable
 
-func (pq priorityQueue) Less(i, j int) bool {
+func (pq *priorityQueue) Less(i, j int) bool {
 	//return true
-	return pq[i].CompareTo(pq[j]) < 0
+	//fmt.Println(pq.Len())
+	return (*pq)[i].CompareTo((*pq)[j]) < 0
 }
 
 func (pq *priorityQueue) Push(x interface{}) {

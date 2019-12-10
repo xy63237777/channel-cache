@@ -42,6 +42,10 @@ func (lc *lruCache) deleteNode(node *lruNode)  {
 	node.LeaveForList()
 }
 
+func (lc *lruCache) Capacity() int {
+	return lc.capacity
+}
+
 func (lc *lruCache) Put(key string, value interface{})  {
 	if lc.capacity <= 0 {
 		return
@@ -53,11 +57,9 @@ func (lc *lruCache) Put(key string, value interface{})  {
 	} else {
 		if lc.Size() >= lc.capacity {
 			//先删除超时的不成功再删除LRU
-			if lc.master.liquidator.clearNode(1) <= 0 {
 				delNode, _ := lc.manager.RemoveHead()
 				delete(lc.elements, delNode.key)
 				lc.size--
-			}
 
 		}
 		lruNode := &lruNode{

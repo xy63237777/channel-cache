@@ -20,6 +20,9 @@ func newLFUCache(capacity int, master *Cache) *lfuCache {
 	return lfuCache
 }
 
+func (lc *lfuCache) Capacity() int {
+	return lc.capacity
+}
 
 func (lc *lfuCache) Get(key string) interface{} {
 	node, ok := lc.elements[key]
@@ -52,6 +55,7 @@ func (lc *lfuCache) deleteNode(node *lfuNode)  {
 	}
 }
 
+
 func (lc *lfuCache) Put(key string, value interface{})  {
 	if lc.capacity <= 0 {
 		return
@@ -62,18 +66,16 @@ func (lc *lfuCache) Put(key string, value interface{})  {
 		freqInc(node)
 	} else {
 		if lc.Size() >= lc.capacity {
-			//先删除超时的不成功再删除LFU
-			if lc.master.liquidator.clearNode(1) <= 0 {
-				listNodeChain := lc.manager.firstLinkedList.next
-				delNode := listNodeChain.GetTail()
-				lc.deleteNode(delNode)
-				delete(lc.elements, delNode.key)
-				lc.size--
-			}
+
+			listNodeChain := lc.manager.firstLinkedList.next
+			delNode := listNodeChain.GetTail()
+			lc.deleteNode(delNode)
+			delete(lc.elements, delNode.key)
 			//delNode, _ := listNodeChain.GetTail()
 			//if listNodeChain.IsEmpty() {
 			//	listNodeChain.LeaveForChain()
 			//}
+			lc.size--
 		}
 		lfuNode := &lfuNode{
 			key:key,

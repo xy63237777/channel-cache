@@ -6,7 +6,14 @@
 
 ![img](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575746010175&di=fe88bcf4903519ce8eacd51bae5379ef&imgtype=0&src=http%3A%2F%2Fpic2.zhimg.com%2Fv2-e23145800bbd3d684aef85ad51145eee_1200x500.jpg)
 
-
+## 重要 【更新于 2020-11-27】
+项目因为早期写还有些东西不足可能包括知识上的不足，目前已经进入到企业(国内互联网顶尖企业之一)工作学习到了很多大佬的知识。
+但是它依旧是一个很好的学习项目。因为由于单个执行器的原因造成了性能的瓶颈。
+但是项目中很多的思想依然值得学习 包括淘汰策略等等。
+目前笔者在写一套值得你在项目中使用的工具包。包括 缓存组件(性能比这个要高很多) 日志组件(这个我觉得非常好用) 等等一系列。。。
+链接： https://github.com/xy63237777/go-lib-utils
+当然目前也在开发当中
+那个缓存也值得学习 : https://github.com/xy63237777/go-lib-utils/tree/master/cache
 
 ## 引言
 
